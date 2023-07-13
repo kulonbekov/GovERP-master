@@ -6,5 +6,4 @@
     <entity name="CompanyDepartment">
         <string name="adminstrations"/>
     </entity>
-
 </domain-models>
