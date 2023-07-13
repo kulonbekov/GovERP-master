@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+    <!-- Author:   -->
+    <!-- date:    13.07.2023 -->
+
+    <selection name="call-center.formAppeal">
+        <option value="1">Incoming call</option>
+        <option value="2">Website</option>
+        <option value="3">Online chat</option>
+        <option value="4">WhatsApp</option>
+    </selection>
+
+    <selection name="call-center.typeTreatment">
+        <option value="1">Query</option>
+        <option value="2">Consultation</option>
+        <option value="3">Complaint</option>
+        <option value="4">Offer</option>
+        <option value="5">Request</option>
+        <option value="6">Gratitude</option>
+    </selection>
+
+    <selection name="helpdesk.status.select" id="helpdesk.status.select.version2">
+        <option value="0">New</option>
+        <option value="1">In progress</option>
+        <option value="2">Resolved</option>
+        <option value="3">Closed</option>
+        <option value="4">In work</option>
+        <option value="5">Under consideration</option>
+        <option value="6">Reviewed</option>
+    </selection>
+
+</object-views>

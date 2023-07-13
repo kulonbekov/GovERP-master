@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+    <module name="helpdesk" package="com.axelor.apps.helpdesk.db"/>
+
+    <entity name="Ticket">
+        <one-to-many name="referenceCard" ref="com.axelor.apps.helpdesk.db.TicketTypeTask"/>
+
+        <string name="ticketSeq" title="Ticket Number" readonly="true"/> <!--Генерация последовательности с приффиксом 'KO0026'-->
+        <string name="subjects" title="Subject" readonly="true"/> <!--Объязательное поле 'true'-->
+        <boolean name="anonymity" title="Anonymity"/> <!--Поле 'Анонимность'-->
+        <!---->
+        <many-to-one name="responsible" ref="com.axelor.auth.db.User"/> <!--поле 'Ответственный' связь с 'User'-->
+        <string name="asteriskRecordRef"/> <!--Новое поле-->
+        <string name="audioRecord"/> <!--Новое поле-->
+        <many-to-one name="userContact" ref="com.axelor.apps.helpdesk.db.UserContact"/> <!--поле 'Полное имя' связь с 'userContact'-->
+
+        <integer name="formAppeal" selection="call-center.formAppeal"/> <!--поле 'Обращение по вызову', есть selection-->
+        <integer name="typeTreatment" selection="call-center.typeTreatment"/> <!--поле 'Вид обращения', есть selection-->
+
+        <string name="description" title="Description" large="true"/> <!--поле 'Описание' для ввода большего текста-->
+        <many-to-many name="ticketTypes" ref="com.axelor.apps.helpdesk.db.TicketType" title="Answers"/><!--поле 'Ответы' связь с 'TicketType'-->
+
+        <integer name="statusSelect" selection="helpdesk.status.select" title="Status"/> <!--поле 'Статус', есть selection-->
+    </entity>
+
+</domain-models>
