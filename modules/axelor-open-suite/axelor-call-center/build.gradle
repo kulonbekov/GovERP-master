@@ -1,0 +1,16 @@
+apply plugin: "com.axelor.app"
+
+apply from: "../version.gradle"
+
+apply{
+    version = openSuiteVersion
+}
+
+axelor {
+    title "Axelor Call Center"
+    description "Axelor Call Center Module"
+}
+
+dependencies {
+    api project(":modules:axelor-helpdesk")
+}
