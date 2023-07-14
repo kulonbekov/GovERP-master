@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+    <module name="helpdesk" package="com.axelor.apps.helpdesk.db"/>
+    <!---->
+    <entity name="TicketType">
+        <string name="value" large="true"/> <!--поле 'Значение' для ввода большего текста-->
+        <many-to-one name="parent" ref="com.axelor.apps.helpdesk.db.TicketType" title="Parent"/> <!--поле 'Родитель', ссылается на себя, для показа дерево-->
+        <boolean name="approved" default="false"/> <!--поле 'Утверждено', по умолчанию 'false'-->
+        <many-to-many ref="com.axelor.apps.helpdesk.db.Tags" name="tags" title="tags category"/> <!--поле 'Теги', связь с 'Tags'-->
+        <string name="ticketTypeBranch" /> <!--Новое поле-->
+        <many-to-one name="responsibleDept" ref="com.axelor.apps.base.db.CompanyDepartment"/> <!--поле 'Ответственный отдел', связь с 'CompanyDepartment'-->
+        <integer name="type" selection="call-center.question-type"/> <!--поле 'Тип'-->
+
+        <track> <!--этот блок, задает поля для отслеживания изменений сущности, куда указано 'on=UPDATE', информация об изменениях будет отслеживаться и сохранятся-->
+            <field name="name" on="UPDATE"/>
+            <field name="value" on="UPDATE"/>
+            <field name="responsibleDept" on="UPDATE"/>
+            <field name="type" on="UPDATE"/>
+        </track>
+    </entity>
+
+</domain-models>
