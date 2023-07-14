@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+    <!-- Author:  -->
+    <!-- date:    14.07.2023 -->
+
+    <grid name="call-center.tags.grid" title="Tags" model="com.axelor.apps.helpdesk.db.Tags" orderBy="-createdOn"> <!--Сетка, сортировка по дате создание  -->
+        <field name="tag" />
+    </grid>
+
+    <form name="call-center.tags.form" title="Tag" model="com.axelor.apps.helpdesk.db.Tags"> <!--форма с одним поле -->
+        <panel name="mainPanel">
+            <field name="tag" title="new tag" />
+        </panel>
+    </form>
+
+</object-views>

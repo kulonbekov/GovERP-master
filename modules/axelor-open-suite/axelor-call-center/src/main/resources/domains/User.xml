@@ -5,9 +5,9 @@
     <module name="auth" package="com.axelor.auth.db"/>
 
     <entity name="User" sequential="true">
-        <boolean name="isOperator"/>
-        <string name="asteriskLogin"/>
-        <string name="asteriskPassword"/>
+        <boolean name="isOperator"/> <!--поле 'является 'user' оператором-->
+        <string name="asteriskLogin"/> <!--поле 'Логин asterisk'-->
+        <string name="asteriskPassword"/> <!--поле 'Пароль asterisk'-->
     </entity>
 
 </domain-models>
