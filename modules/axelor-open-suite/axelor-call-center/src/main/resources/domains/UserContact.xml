@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+    <module name="helpdesk" package="com.axelor.apps.helpdesk.db"/>
+
+    <entity name="UserContact">
+        <string name="phoneNumber"/>
+        <string name="firstName"/>
+        <string name="lastName"/>
+        <string name="middleName"/>
+        <string name="email"/>
+
+        <string name="fullName" namecolumn="true" search="ticketSeq,firstName,lastName,middleName" >
+            <![CDATA[
+                StringBuilder builder = new StringBuilder();
+                String empty = "";
+                String emptySpace = " ";
+                builder.append(getFirstName() 	== null ? empty : getFirstName()).append(emptySpace);
+                builder.append(getLastName() 	== null ? empty : getLastName()).append(emptySpace);
+                builder.append(getMiddleName() 	== null ? empty : getMiddleName()).append(emptySpace);
+                return builder.toString();
+            ]]>
+        </string>
+
+        <finder-method name="findByPhoneNumber" using="phoneNumber" all="true"/>
+        <track>
+            <field name="phoneNumber"/>
+            <field name="firstName"/>
+            <field name="lastName"/>
+            <field name="middleName"/>
+            <field name="email"/>
+        </track>
+    </entity>
+
+</domain-models>
