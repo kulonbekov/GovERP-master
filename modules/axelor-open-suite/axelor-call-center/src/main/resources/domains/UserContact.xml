@@ -5,11 +5,11 @@
     <module name="helpdesk" package="com.axelor.apps.helpdesk.db"/>
 
     <entity name="UserContact">
-        <string name="phoneNumber"/>
-        <string name="firstName"/>
-        <string name="lastName"/>
-        <string name="middleName"/>
-        <string name="email"/>
+        <string name="phoneNumber"/> <!--поле '№ телефона'-->
+        <string name="firstName"/> <!--поле 'Имя'-->
+        <string name="lastName"/> <!--поле 'Фамилия'-->
+        <string name="middleName"/> <!--поле 'Отчество'-->
+        <string name="email"/> <!--поле 'Электронна почта'-->
 
         <string name="fullName" namecolumn="true" search="ticketSeq,firstName,lastName,middleName" >
             <![CDATA[
@@ -23,8 +23,8 @@
             ]]>
         </string>
 
-        <finder-method name="findByPhoneNumber" using="phoneNumber" all="true"/>
-        <track>
+        <finder-method name="findByPhoneNumber" using="phoneNumber" all="true"/> <!--метод поиска "findByPhoneNumber", который будет искать записи в сущности-->
+        <track> <!--этот блок, задает поля для отслеживания изменений сущности, куда указано 'on=UPDATE', информация об изменениях будет отслеживаться и сохранятся-->
             <field name="phoneNumber"/>
             <field name="firstName"/>
             <field name="lastName"/>
