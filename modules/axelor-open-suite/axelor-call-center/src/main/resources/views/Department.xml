@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+    <!-- Author:   -->
+    <!-- date:    14.07.2023 -->
+
+    <action-view name="call-center.department.all" title="Divisions"
+                 model="com.axelor.apps.base.db.CompanyDepartment">
+        <view type="grid" name="company-department-company-grid"/>
+        <view type="form" name="cell-center.company-department-company-form"/>
+    </action-view>
+
+    <form name="cell-center.company-department-company-form" title="Division"
+          model="com.axelor.apps.base.db.CompanyDepartment">
+        <panel name="mainPanel">
+            <field name="code" x-bind="{{code|unaccent|uppercase}}" colSpan="12"/>
+            <field name="name" title="Dept" colSpan="12"/>
+            <field name="administrations" colSpan="12"/>
+        </panel>
+    </form>
+</object-views>

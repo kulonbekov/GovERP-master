@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+    <!-- Author:  -->
+    <!-- date:    14.07.2023 -->
+    <menuitem name="call-center.operator.menu-item" tag="operator" title="Call center"/>
+    <menuitem name="call-center.admin.menu-item" tag="admin" title="Call center"/>
+
+</object-views>

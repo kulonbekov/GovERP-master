@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+    <module name="helpdesk" package="com.axelor.apps.helpdesk.db"/>
+    <!---->
+    <entity name="TicketTypeTask">
+        <many-to-one name="responsibleUser" ref="com.axelor.auth.db.User"
+                     title="User in charge of the issue"/> <!--поле 'Ответственный', связь с 'User'-->
+        <many-to-one name="department" title="Division" ref="com.axelor.apps.base.db.CompanyDepartment"/> <!--поле 'Подразделения', связь с 'CompanyDepartment'-->
+        <many-to-one name="referenceCard" ref="com.axelor.apps.helpdesk.db.Ticket"/> <!--поле 'Карточка обращения', связь с 'Ticket'-->
+        <datetime name="startDateT" title="Start date"/> <!--поле 'Дата начало'-->
+        <datetime name="endDateT" title="End date"/> <!--поле 'Дата окончания'-->
+        <datetime name="deadlineDateT" title="Deadline"/> <!--поле 'Крайний срок'-->
+        <string name="description" title="Description" large="true"/> <!--поле 'Описание'-->
+        <integer name="prioritySelect" title="Priority" selection="helpdesk.priority.select"
+                 default="2"/> <!--поле 'Приоритет', есть selection, по умолчанию значение 'Нормальный'-->
+        <integer name="statusSelect" selection="call-center.task.status.select"/> <!--поле 'Выбор статуса', есть selection-->
+
+        <track> <!--этот блок, задает поля для отслеживания изменений сущности, куда указано 'on=UPDATE', информация об изменениях будет отслеживаться и сохранятся-->
+            <field name="responsibleUser"/>
+            <field name="department"/>
+            <field name="startDateT"/>
+            <field name="endDateT"/>
+            <field name="deadlineDateT"/>
+            <field name="description"/>
+            <field name="prioritySelect"/>
+        </track>
+    </entity>
+</domain-models>

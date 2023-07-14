@@ -31,4 +31,16 @@
         <option value="6">Reviewed</option>
     </selection>
 
+    <selection name="call-center.anonimity.state">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </selection>
+
+    <selection name="call-center.task.status.select">
+        <option value="1">In work</option>
+        <option value="2">Executed</option>
+        <option value="3">Unfulfilled</option>
+        <option value="4">Overdue</option>
+    </selection>
+
 </object-views>
